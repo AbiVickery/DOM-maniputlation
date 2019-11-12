@@ -21,3 +21,21 @@ var foo6 = document.querySelectorAll('.foo');
 console.log(foo6);
 console.log(foo6.item(1));
 
+console.log(foo3.parentNode);
+console.log(foo3.previousSibling);
+console.log(foo3.nextSibling);
+
+var output = document.getElementById('output');
+for (let i = 0; i < 5; i++) {
+    let el = document.createElement('li');
+    el.innerText = 'This is element: $(i)';
+    output.appendChild(el);
+}
+
+var button = document.querySelector('.button');
+button.addEventListener('click', function (event) {
+    let button = event.target;
+    if (button.getAttribute('data-char') == 'x') {
+        console.log('times');
+    }
+});
