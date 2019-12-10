@@ -110,11 +110,16 @@ console.log(className);
 let querySelectorAll = document.querySelectorAll('.item');
 console.log(querySelectorAll);
 
+const food = ['Beer', 'Pizza', 'Bread'];
 for (const listItem of querySelectorAll) {
     console.log(listItem); // ???
-    listItem.addEventListener('click', changeColor);
+    listItem.addEventListener('click', cart);
 }
 
 function changeColor() {
     this.style.color = 'red';
+}
+
+function cart(item) {
+    console.log(food[item]);
 }
