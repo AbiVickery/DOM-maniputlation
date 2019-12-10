@@ -55,34 +55,47 @@
 // }
 
 
-var links = document.querySelectorAll('.links a');
-// console.log(links);
+// var links = document.querySelectorAll('.links a');
+// // console.log(links);
 
-links[0].addEventListener('click', function (event) {
-    event.preventDefault();
-    console.log('Hello 1');
-});
-links[1].addEventListener('click', function (event) {
-    event.preventDefault();
-    console.log('hello 2');
-});
-links[2].addEventListener('click', function (event) {
-    event.preventDefault();
-    console.log('hello 3');
-});
+// links[0].addEventListener('click', function (event) {
+//     event.preventDefault();
+//     console.log('Hello 1');
+// });
+// links[1].addEventListener('click', function (event) {
+//     event.preventDefault();
+//     console.log('hello 2');
+// });
+// links[2].addEventListener('click', function (event) {
+//     event.preventDefault();
+//     console.log('hello 3');
+// });
 
 
-var links = document.querySelectorAll('.links a');
-for (let i = 0; i < links.length; i++) {
-    links[i].addEventListener('click', function(event) {
-        event.preventDefault();
-        var confirm = window.confirm('Do you wish to leave?');
-        if (confirm) {
-            var href = event.target.getAttribute('href');
-            window.location = href;
-        } else {
-            console.log('No I wish to stay!');
-        }
+// var links = document.querySelectorAll('.links a');
+// for (let i = 0; i < links.length; i++) {
+//     links[i].addEventListener('click', function(event) {
+//         event.preventDefault();
+//         var confirm = window.confirm('Do you wish to leave?');
+//         if (confirm) {
+//             var href = event.target.getAttribute('href');
+//             window.location = href;
+//         } else {
+//             console.log('No I wish to stay!');
+//         }
         
-    });
-}
+//     });
+// }
+
+// DOM
+let output = document.getElementById('output');
+console.log(output);
+// output.innerText = 'Hello World!';
+output.innerHTML = '<h1><span>Hello World!</span></h1>';
+debugger
+
+// let hello = output.innerHTML;
+hello = output.innerHTML;
+output.innerText = 'Foo';
+console.log(hello);
+
