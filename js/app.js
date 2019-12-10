@@ -123,3 +123,49 @@ function changeColor() {
 function cart(item) {
     console.log(food[item]);
 }
+
+const food = ['Beer', 'Pizza', 'Bread'];
+// LOOP TO ADD EVENT LISTENER
+for (const listItem of querySelectorAll) {
+    console.log(listItem);
+    listItem.addEventListener('click', function () {
+        let item = this.getAttribute('data-id');
+        cart(item);
+    });
+}
+
+// CALLBACK FUNCTION
+// function cart(item) {
+    // console.log(food[item]);
+// }
+
+
+const foods = [
+    {
+        name: 'Apple Juice',
+        price: 5.25,
+        brand: 'Motts'
+    },
+    {
+        name: 'Pizza',
+        price: 10.75,
+        brand: 'Udies'
+    },
+    {
+        name: 'Ice Cream',
+        price: 5.35,
+        brand: 'Halo Top'
+    }
+]
+const foodOutput = document.getElementById('foods');
+
+for (const idx in foods) {
+    const food = foods[idx];
+    // CREATE AND ADD ELEMENT TO THE DOM
+    let el = document.createElement('li');
+    el.innerText = `${food.name} - ${food.brand} : $${food.price}`;
+    foodOutput.appendChild(el);
+    // ---------------------------------
+
+    // ADD AN EVENT LISTENER
+}

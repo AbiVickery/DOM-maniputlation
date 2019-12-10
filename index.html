@@ -26,11 +26,13 @@
         output.innerText = 'Foo';
         console.log(hello);
     </code>
+    <br />
     <ul>
         <li class="item">Beer</li>
         <li class="item">Pizza</li>
         <li class="item">Bread</li>
     </ul>
+    <br />
     <code id="js2">
         let tagName = document.getELementsByTagName('li');
         console.log(tagName);
@@ -58,6 +60,48 @@
 
         function cart(item) {
             console.log(food[item]);
+        }
+    </code>
+    <br />
+    <p> _ _ _</p>
+    <!-- <br /> -->
+    <code id="js3">
+        const food = ['Beer', 'Pizza', 'Bread'];
+        // LOOP TO ADD EVENT LISTENER
+        for (const listItem of querySelectorAll) {
+            console.log(listItem);
+            listItem.addEventListener('click', function () {
+                let item = this.getAttribute('data-id');
+                cart(item);
+            });
+        }
+    </code>
+    <ul id="foods"></ul>
+    <code id="js4">
+        const foods = [
+        {
+            name: 'Apple Juice',
+            price: 5.25,
+            brand: 'Motts'
+        },
+        {
+            name: 'Pizza',
+            price: 10.75,
+            brand: 'Udies'
+        },
+        {
+            name: 'Ice Cream',
+            price: 5.35,
+            brand: 'Halo Top'
+        }
+        ]
+        const foodOutput = document.getElementById('foods');
+
+        for (const idx in foods) {
+            const food = foods[idx];
+            let el = document.createElement('li');
+            el.innerText = `${food.name} - ${food.brand} : $${food.price}`;
+            foodOutput.appendChild(el);
         }
     </code>
     <script src="js/app.js"></script>
