@@ -168,4 +168,20 @@ for (const idx in foods) {
     // ---------------------------------
 
     // ADD AN EVENT LISTENER
+    el.addEventListener('click', addToCart);
+}
+
+let cart = {}
+function addToCart() {
+    let item = this.getAttribute('data-id');
+    let food = foods[item];
+    if (cart[food.name]) {
+        cart[food.name].qty++;
+    } else {
+        cart[food.name] = {
+            qty: 1,
+            price: food.price
+        };
+    }
+    console.log(cart);
 }

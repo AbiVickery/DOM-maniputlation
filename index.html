@@ -102,6 +102,28 @@
             let el = document.createElement('li');
             el.innerText = `${food.name} - ${food.brand} : $${food.price}`;
             foodOutput.appendChild(el);
+            // -----------------------------
+
+            // ADD AN EVENT LISTENER
+            el.addEventListener('click', addToCart);
+        }
+    </code>
+    <p> _ _ _</p>
+    <br />
+    <code id="js5">
+        let cart = {}
+        function addToCart() {
+            let item = this.getAttribute('data-id');
+            let food = foods[item];
+            if (cart[food.name]) {
+                cart[food.name].qty++;
+            } else {
+                cart[food.name] = {
+                    qty: 1,
+                    price: food.price
+                };
+            }
+            console.log(cart);
         }
     </code>
     <script src="js/app.js"></script>
