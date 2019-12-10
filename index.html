@@ -14,7 +14,7 @@
         <li class="foo"></li>
     </ul> -->
     <div id="output">Hello World!</div>
-    <code>
+    <code id="js1">
         let output = document.getELementById('output');
         console.log(output);
         // output.innerText = 'Hello World!';
@@ -25,6 +25,30 @@
         hello = output.innerHTML;
         output.innerText = 'Foo';
         console.log(hello);
+    </code>
+    <ul>
+        <li class="item">Beer</li>
+        <li class="item">Pizza</li>
+        <li class="item">Bread</li>
+    </ul>
+    <code id="js2">
+        let tagName = document.getELementsByTagName('li');
+        console.log(tagName);
+
+        let className = document.getElementsByClassName('item');
+        console.log(className);
+
+        let querySelectorAll = document.querySelectorAll('.item');
+        console.log(querySelectorAll);
+
+        for (const listItem of querySelectorAll) {
+            console.log(listItem);
+            listItem.addEventListener('click', changeColor);
+        }
+        
+        function changeColor() {
+            this.style.color = 'red';
+        }
     </code>
     <script src="js/app.js"></script>
 </body>

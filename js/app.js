@@ -92,10 +92,29 @@ let output = document.getElementById('output');
 console.log(output);
 // output.innerText = 'Hello World!';
 output.innerHTML = '<h1><span>Hello World!</span></h1>';
-debugger
+// debugger
 
 // let hello = output.innerHTML;
 hello = output.innerHTML;
 output.innerText = 'Foo';
 console.log(hello);
 
+// ~~~~~~~~~~~~~~~~~~~~~~~
+
+let tagName = document.getElementsByTagName('li');
+console.log(tagName);
+
+let className = document.getElementsByClassName('item');
+console.log(className);
+
+let querySelectorAll = document.querySelectorAll('.item');
+console.log(querySelectorAll);
+
+for (const listItem of querySelectorAll) {
+    console.log(listItem); // ???
+    listItem.addEventListener('click', changeColor);
+}
+
+function changeColor() {
+    this.style.color = 'red';
+}
