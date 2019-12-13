@@ -88,100 +88,140 @@
 // }
 
 // DOM
-let output = document.getElementById('output');
-console.log(output);
-// output.innerText = 'Hello World!';
-output.innerHTML = '<h1><span>Hello World!</span></h1>';
-// debugger
+// let output = document.getElementById('output');
+// console.log(output);
+// // output.innerText = 'Hello World!';
+// output.innerHTML = '<h1><span>Hello World!</span></h1>';
+// // debugger
 
 // let hello = output.innerHTML;
-hello = output.innerHTML;
-output.innerText = 'Foo';
-console.log(hello);
+// hello = output.innerHTML;
+// output.innerText = 'Foo';
+// console.log(hello);
 
-// ~~~~~~~~~~~~~~~~~~~~~~~
+// // ~~~~~~~~~~~~~~~~~~~~~~~
 
-let tagName = document.getElementsByTagName('li');
-console.log(tagName);
+// let tagName = document.getElementsByTagName('li');
+// console.log(tagName);
 
-let className = document.getElementsByClassName('item');
-console.log(className);
+// let className = document.getElementsByClassName('item');
+// console.log(className);
 
-let querySelectorAll = document.querySelectorAll('.item');
-console.log(querySelectorAll);
+// let querySelectorAll = document.querySelectorAll('.item');
+// console.log(querySelectorAll);
 
-const food = ['Beer', 'Pizza', 'Bread'];
-for (const listItem of querySelectorAll) {
-    console.log(listItem); // ???
-    listItem.addEventListener('click', cart);
-}
-
-function changeColor() {
-    this.style.color = 'red';
-}
-
-function cart(item) {
-    console.log(food[item]);
-}
-
-const food = ['Beer', 'Pizza', 'Bread'];
-// LOOP TO ADD EVENT LISTENER
-for (const listItem of querySelectorAll) {
-    console.log(listItem);
-    listItem.addEventListener('click', function () {
-        let item = this.getAttribute('data-id');
-        cart(item);
-    });
-}
-
-// CALLBACK FUNCTION
-// function cart(item) {
-    // console.log(food[item]);
+// const food = ['Beer', 'Pizza', 'Bread'];
+// for (const listItem of querySelectorAll) {
+//     console.log(listItem); // ???
+//     listItem.addEventListener('click', cart);
 // }
 
+// function changeColor() {
+//     this.style.color = 'red';
+// }
 
-const foods = [
-    {
-        name: 'Apple Juice',
-        price: 5.25,
-        brand: 'Motts'
-    },
-    {
-        name: 'Pizza',
-        price: 10.75,
-        brand: 'Udies'
-    },
-    {
-        name: 'Ice Cream',
-        price: 5.35,
-        brand: 'Halo Top'
-    }
-]
-const foodOutput = document.getElementById('foods');
+// function cart(item) {
+//     console.log(food[item]);
+// }
 
-for (const idx in foods) {
-    const food = foods[idx];
-    // CREATE AND ADD ELEMENT TO THE DOM
-    let el = document.createElement('li');
-    el.innerText = `${food.name} - ${food.brand} : $${food.price}`;
-    foodOutput.appendChild(el);
-    // ---------------------------------
+// const food = ['Beer', 'Pizza', 'Bread'];
+// // LOOP TO ADD EVENT LISTENER
+// for (const listItem of querySelectorAll) {
+//     console.log(listItem);
+//     listItem.addEventListener('click', function () {
+//         let item = this.getAttribute('data-id');
+//         cart(item);
+//     });
+// }
 
-    // ADD AN EVENT LISTENER
-    el.addEventListener('click', addToCart);
+// // CALLBACK FUNCTION
+// // function cart(item) {
+//     // console.log(food[item]);
+// // }
+
+
+// const foods = [
+//     {
+//         name: 'Apple Juice',
+//         price: 5.25,
+//         brand: 'Motts'
+//     },
+//     {
+//         name: 'Pizza',
+//         price: 10.75,
+//         brand: 'Udies'
+//     },
+//     {
+//         name: 'Ice Cream',
+//         price: 5.35,
+//         brand: 'Halo Top'
+//     }
+// ]
+// const foodOutput = document.getElementById('foods');
+
+// for (const idx in foods) {
+//     const food = foods[idx];
+//     // CREATE AND ADD ELEMENT TO THE DOM
+//     let el = document.createElement('li');
+//     el.innerText = `${food.name} - ${food.brand} : $${food.price}`;
+//     foodOutput.appendChild(el);
+//     // ---------------------------------
+
+//     // ADD AN EVENT LISTENER
+//     el.addEventListener('click', addToCart);
+// }
+
+// let cart = {}
+// function addToCart() {
+//     let item = this.getAttribute('data-id');
+//     let food = foods[item];
+//     if (cart[food.name]) {
+//         cart[food.name].qty++;
+//     } else {
+//         cart[food.name] = {
+//             qty: 1,
+//             price: food.price
+//         };
+//     }
+//     console.log(cart);
+// }
+
+const output = document.getElementById('output');
+const button = document.getElementById('submit');
+
+button.addEventListener('click', handleData);
+
+output.innerText = '';
+
+function handleData() {
+    const input = document.getElementById('input');
+    console.log(input.value);
+    input.value = '';
+    return value;
 }
 
-let cart = {}
-function addToCart() {
-    let item = this.getAttribute('data-id');
-    let food = foods[item];
-    if (cart[food.name]) {
-        cart[food.name].qty++;
-    } else {
-        cart[food.name] = {
-            qty: 1,
-            price: food.price
-        };
-    }
-    console.log(cart);
-}
+var first = document.getElementById('first');
+first.addEventListener('click', function (event) {
+    event.stopPropagation();
+    console.log('first');
+});
+
+// console.time('test');
+let temp = performance.now();
+console.log(temp);
+
+let count = 0;
+// while (count < 10000000) {
+//     count++;
+// }
+let temp2 = performance.now();
+console.log(temp2 - temp);
+
+// console.timeEnd('test');
+
+
+// let el = document.createElement('');
+// el.classList.add('foo');
+// el.setAttribute('data-id', idx);
+// el.innerText = `${food.name} - ${food.brand} : $${food.price}`;
+// foodOutput.apppendChild(el);
